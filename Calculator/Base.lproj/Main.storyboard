@@ -15,15 +15,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CU4-Et-jc2">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="OnE-1Y-n7A">
                                 <rect key="frame" x="24" y="68" width="366" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CU4-Et-jc2">
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="dWt-B1-h08"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKo-lr-jMg">
+                                        <rect key="frame" x="0.0" y="120" width="366" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="aoc-b1-lXx"/>
+                                    <constraint firstItem="CU4-Et-jc2" firstAttribute="leading" secondItem="OnE-1Y-n7A" secondAttribute="leading" id="4jJ-lq-sBw"/>
+                                    <constraint firstItem="hKo-lr-jMg" firstAttribute="leading" secondItem="OnE-1Y-n7A" secondAttribute="leading" id="ZV9-Yk-TCf"/>
+                                    <constraint firstAttribute="height" constant="150" id="feN-og-3NV"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xhT-mF-OD4">
                                 <rect key="frame" x="24" y="242" width="366" height="596"/>
                                 <subviews>
@@ -132,7 +148,7 @@
                                                             <constraint firstAttribute="width" secondItem="AQE-x6-3lW" secondAttribute="height" id="Djd-Ej-u8g"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="X">
+                                                        <buttonConfiguration key="configuration" style="plain" title="×">
                                                             <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
                                                             <color key="baseForegroundColor" red="0.90196078430000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         </buttonConfiguration>
@@ -163,7 +179,7 @@
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="tapNumberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ST8-Ch-HXW"/>
+                                                            <action selector="tapNumberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Amy-Ly-ZRi"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfk-kJ-zgv" customClass="RoundButton" customModule="Calculator" customModuleProvider="target">
@@ -294,7 +310,7 @@
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="tapPlusButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mpb-Ga-qC0"/>
+                                                            <action selector="tapAddButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1PR-KF-wUg"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -378,18 +394,18 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="xhT-mF-OD4" firstAttribute="top" secondItem="CU4-Et-jc2" secondAttribute="bottom" constant="24" id="1Cb-4I-6Oe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xhT-mF-OD4" secondAttribute="trailing" constant="24" id="43L-QJ-hAR"/>
+                            <constraint firstItem="xhT-mF-OD4" firstAttribute="top" secondItem="OnE-1Y-n7A" secondAttribute="bottom" constant="24" id="547-gV-uIZ"/>
                             <constraint firstItem="xhT-mF-OD4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="Ht8-i7-bjt"/>
-                            <constraint firstItem="CU4-Et-jc2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="Ifu-tt-RaD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CU4-Et-jc2" secondAttribute="trailing" constant="24" id="MvC-D0-uRx"/>
+                            <constraint firstItem="OnE-1Y-n7A" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="24" id="Qxr-p7-hT9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xhT-mF-OD4" secondAttribute="bottom" constant="24" id="eLs-XO-Tb1"/>
-                            <constraint firstItem="xhT-mF-OD4" firstAttribute="top" secondItem="CU4-Et-jc2" secondAttribute="bottom" constant="24" id="lNb-8E-44H"/>
-                            <constraint firstItem="CU4-Et-jc2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="skY-ed-7yw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OnE-1Y-n7A" secondAttribute="trailing" constant="24" id="oUv-NB-cKD"/>
+                            <constraint firstItem="OnE-1Y-n7A" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="saA-lQ-Nst"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="numberOutputLabel" destination="CU4-Et-jc2" id="NDS-8p-Dat"/>
+                        <outlet property="operationOutputLabel" destination="hKo-lr-jMg" id="ZeP-Qc-DtU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

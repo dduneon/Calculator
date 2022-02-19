@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class RoundButton: UIButton {
     @IBInspectable var isRound: Bool = false {
         didSet {
